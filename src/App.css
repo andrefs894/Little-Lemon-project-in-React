@@ -1,38 +1,238 @@
-.App {
-  text-align: center;
+* {
+  font-family: 'Markazi Text';
+  font-size: 16px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (max-width: 768px) {
+  * {
+      font-size: 10px;
+  }
+  body .hero-container {
+    padding: 25px 10%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media screen and (max-width: 1470px) {
+  body .hero-container {
+    flex-direction: column;
+  }
+  body .highlights-cards {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 1244px) {
+  body .header {
+    justify-content: space-between;
+  }
+  body .menu {
+    display: none;
+  }
+  body .hamburger-menu {
+    display: block;
+  }
+  body .hero-container {
+    flex-direction: column;
+  }
+}
+
+h1 {
+  margin:0;
+  font-size: 5rem;
+  font-weight:600;
+  color: #F4CE14
+}
+
+h2 {
+  margin: 0;
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+h3 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+h4 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight:lighter;
+}
+
+p {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 0;
+  border-radius: 10px;
+  cursor: pointer
+}
+
+/*----------HEADER-----------*/
+
+.header {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 20px 10%;
 }
 
-.App-link {
-  color: #61dafb;
+.menu {
+  display: block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav ul li {
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: .3s;
+}
+
+a:hover {
+  color: #EE9972;
+}
+
+.logo {
+  height:3rem;
+  cursor: pointer;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+.hamburger-menu button {
+  height: auto;
+  border: 1px solid black;
+  background-color: white;
+  color:black;
+  margin-top: auto;
+}
+
+/*----------HERO-----------*/
+
+.hero {
+  background-color: #495E57;
+}
+
+.hero-container {
+  display: flex;
+  padding: 50px 20%;
+}
+
+.description {
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 5%;
+  color:white;
+}
+
+.description button {
+  width:100%;
+  background-color: #F4CE14;
+  color:black;
+  margin-top: auto;
+}
+
+.restaurant {
+  flex:1;
+  text-align: center;
+  padding: 0 5%;
+}
+
+#restaurant {
+  max-height: 400px;
+  min-width: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/*----------HIGHLIGHTS-----------*/
+
+.highlights-container {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 20%;
+}
+
+.highlights-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.highlights-title button {
+  background-color: black;
+  padding: 0 20px;
+  color:white;
+}
+
+.highlights-cards {
+  display: flex;
+  justify-content: space-around;
+  gap:2%;
+  padding:5% 0;
+}
+
+.card {
+  border-radius: 20px 20px 0 0;
+  background-color: #EDEFEE;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header img {
+  border-radius: 20px 20px 0 0;
+  height:200px;
+  width:100%;
+  object-fit: cover;
+}
+
+.card-title {
+  display:flex;
+  justify-content: space-between;
+  padding: 0 5%;
+}
+
+.card-price {
+  color: #EE9972
+}
+
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1% 5%;
+}
+
+.card-body p {
+  color: #495E57
+}
+
+.card-body a {
+  margin-top:auto;
+}
+
+/*----------TESTIMONIALS-----------*/
+
+.testimonials {
+  height: 500px;
+  background-color: #495E57;
+}
+
+.about {
+  height: 500px;
+  background-color: white;
 }

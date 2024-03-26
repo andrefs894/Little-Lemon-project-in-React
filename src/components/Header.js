@@ -4,8 +4,10 @@ import Nav from './Nav';
 function Header() {
     return (
         <header>
-            <img src={Logo} />
-            <Nav />
+            <div className="header">
+                <img src={Logo} className="logo" alt="logo" />
+                <Nav />
+            </div>
         </header>
     )
 }

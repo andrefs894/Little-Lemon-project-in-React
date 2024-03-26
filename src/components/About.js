@@ -1,6 +1,6 @@
 function About() {
     return (
-        <section>
+        <section className="about">
 
         </section>
     )

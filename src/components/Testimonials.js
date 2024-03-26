@@ -1,8 +1,8 @@
 function Testimonials() {
     return (
-        <div>
+        <section className="testimonials">
 
-        </div>
+        </section>
     )
 }
 
