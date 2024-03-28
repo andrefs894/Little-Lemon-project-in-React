@@ -7,21 +7,39 @@
   * {
       font-size: 10px;
   }
+}
+
+@media screen and (max-width: 1469px) {
+  body .highlights-cards {
+    flex-wrap: wrap;
+  }
+  body .testimonials-cards {
+    flex-wrap: wrap;
+  }
   body .hero-container {
+    padding: 25px 10%;
+  }
+  body .highlights-container {
     padding: 25px 10%;
   }
 }
 
-@media screen and (max-width: 1470px) {
+@media screen and (max-width: 1103px) {
   body .hero-container {
-    flex-direction: column;
+    padding: 10px 5%;
   }
-  body .highlights-cards {
-    flex-wrap: wrap;
+  body .highlights-container {
+    padding: 10px 5%;
   }
 }
 
-@media screen and (max-width: 1244px) {
+@media screen and (max-width: 980px) {
+  body .hero-container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1408px) {
   body .header {
     justify-content: space-between;
   }
@@ -31,9 +49,7 @@
   body .hamburger-menu {
     display: block;
   }
-  body .hero-container {
-    flex-direction: column;
-  }
+
 }
 
 h1 {
@@ -66,10 +82,9 @@ p {
   font-size: 1.5rem;
 }
 
-button {
-  border: none;
-  outline: none;
-  padding: 0;
+.button {
+  text-align: center;
+  text-decoration: none;
   border-radius: 10px;
   cursor: pointer
 }
@@ -87,24 +102,23 @@ button {
   display: block;
 }
 
-nav ul li {
+.nav-item {
   display: inline-block;
   padding: 10px 20px;
-}
-
-a {
   text-decoration: none;
   color: black;
   font-weight: bold;
   transition: .3s;
 }
 
-a:hover {
+.nav-item:hover {
+  cursor: pointer;
   color: #EE9972;
 }
 
 .logo {
-  height:3rem;
+  padding: 0 5%;
+  height:4rem;
   cursor: pointer;
 }
 
@@ -112,12 +126,8 @@ a:hover {
   display: none;
 }
 
-.hamburger-menu button {
-  height: auto;
-  border: 1px solid black;
-  background-color: white;
-  color:black;
-  margin-top: auto;
+.hamburger-menu img {
+  cursor: pointer;
 }
 
 /*----------HERO-----------*/
@@ -139,7 +149,8 @@ a:hover {
   color:white;
 }
 
-.description button {
+.description .button {
+  margin: 2% 0;
   width:100%;
   background-color: #F4CE14;
   color:black;
@@ -172,10 +183,14 @@ a:hover {
   justify-content: space-between;
 }
 
-.highlights-title button {
+.highlights-title .button {
+  display: flex;
+  align-items: center;
   background-color: black;
   padding: 0 20px;
+  margin: 0 0 0 20px;
   color:white;
+  justify-content: center;
 }
 
 .highlights-cards {
@@ -185,7 +200,7 @@ a:hover {
   padding:5% 0;
 }
 
-.card {
+.highlights-cards .card {
   border-radius: 20px 20px 0 0;
   background-color: #EDEFEE;
   width: 400px;
@@ -193,46 +208,158 @@ a:hover {
   flex-direction: column;
 }
 
-.card-header img {
+.highlights-cards .card-header img {
   border-radius: 20px 20px 0 0;
   height:200px;
   width:100%;
   object-fit: cover;
 }
 
-.card-title {
+.highlights-cards .card-title {
   display:flex;
   justify-content: space-between;
   padding: 0 5%;
 }
 
-.card-price {
+.highlights-cards .card-price {
   color: #EE9972
 }
 
-.card-body {
+.highlights-cards .card-body {
   flex: 1;
   display: flex;
   flex-direction: column;
   padding: 1% 5%;
 }
 
-.card-body p {
+.highlights-cards .card-body p {
   color: #495E57
 }
 
-.card-body a {
+.highlights-cards .card-body .nav-item {
+  padding: 0;
   margin-top:auto;
 }
 
 /*----------TESTIMONIALS-----------*/
 
 .testimonials {
-  height: 500px;
   background-color: #495E57;
 }
+
+.testimonials-container {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 10%;
+}
+
+.testimonials-cards {
+  display: flex;
+  justify-content: space-around;
+  gap:2%;
+  padding:5% 0;
+}
+
+.testimonials-title {
+  color:#EDEFEE;
+  text-align: center;
+}
+
+.testimonials-cards .card-header img {
+  border-radius: 20px 0 0 20px;
+  height:100%;
+  width:150px;
+  object-fit: cover;
+}
+
+.testimonials-cards .card {
+  border-radius: 20px 0 0 20px;
+  background-color: #EDEFEE;
+  width: 600px;
+  display: flex;
+}
+
+.testimonials-cards .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1% 5%;
+}
+
+.testimonials-cards .card-body h4 {
+  padding: 0;
+  margin-top:auto;
+}
+
+/*----------RESERVATIONS-----------*/
+
+.reservations {
+  background-color: #495E57;
+}
+
+.reservations-container {
+  padding: 50px 30%;
+}
+
+.reservations-form {
+  display: flex;
+  flex-direction: column;
+  color:white;
+}
+
+.reservations-container h2 {
+  color:#F4CE14
+}
+
+.reservations-form input {
+  font-size: 2rem;
+  margin: 0 0 3% 0;
+}
+
+.reservations-form select {
+  font-size: 2rem;
+  margin: 0 0 3% 0;
+}
+
+.reservations-form option {
+  font-size: 1.5rem
+}
+
+.reservations-form .button {
+  border: none;
+  outline: none;
+  margin: 3% 0;
+  background-color: #F4CE14;
+  color:black;
+}
+
+/*----------ABOUT-----------*/
 
 .about {
   height: 500px;
   background-color: white;
+}
+
+/*----------FOOTER-----------*/
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap:5%;
+  padding: 50px 10%;
+}
+
+.footer-container .links {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-container .links .icons {
+  display: flex;
+  justify-content: space-between;
+  padding: 5% 0;
+}
+
+.footer-container .logo {
+    height:6rem;
 }

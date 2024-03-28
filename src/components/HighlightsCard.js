@@ -1,8 +1,10 @@
-function Card(props) {
+import {Link} from 'react-router-dom'
+
+function HighlightsCard(props) {
     return (
         <div className="card">
             <div className="card-header">
-                <img src={props.card.img} />
+                <img src={props.card.img} alt="card" />
             </div>
             <div className="card-title">
                 <h3>{props.card.title}</h3>
@@ -10,10 +12,10 @@ function Card(props) {
             </div>
             <div className="card-body">
                 <p>{props.card.description}</p>
-                <a href="#"><h3>Order a delivery</h3></a>
+                <Link to="/orderonline" className="nav-item"><h3>Order online</h3></Link>
             </div>
         </div>
     )
 }
 
-export default Card
+export default HighlightsCard
