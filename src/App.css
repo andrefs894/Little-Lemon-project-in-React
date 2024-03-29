@@ -22,6 +22,9 @@
   body .highlights-container {
     padding: 25px 10%;
   }
+  body .about-container {
+    padding: 25px 10%;
+  }
 }
 
 @media screen and (max-width: 1103px) {
@@ -368,9 +371,10 @@ p {
 
 .about-container {
   display: flex;
-  padding: 50px 10%;
+  padding: 50px 15%;
   align-items: center;
 }
+
 .about-container .text {
   padding: 0 5%;
   color:white;

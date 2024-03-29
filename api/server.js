@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+
 const app = express();
 const PORT = 3001;
 
@@ -25,6 +26,7 @@ app.post('/api/submit', (req, res) => {
     occasion: req.body.occasion
   }
   reservations.push(submit);
+  console.log(reservations);
   res.json({ success: true });
 });
 

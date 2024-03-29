@@ -2,16 +2,31 @@ import Home from './Home';
 import About from './About';
 import Menu from './Menu';
 import Reservations from './Reservations';
+import BookingConfirm from './BookingConfirm';
 import { Route, Routes } from 'react-router-dom';
 import { useReducer } from 'react';
-import BookingConfirm from './BookingConfirm';
+import { toast } from 'react-toastify';
 
 function Main() {
+  const notify = () => toast.error("Failed to connect to server.");
 
   const updateTimes = async (date) => {
-    //MAKE A TRY CATCH TO AVOID BREAK CODE WHEN SERVER IS NOT UP
-    const response = await fetch(`http://localhost:3001/api/reservations/${date}`);
-    const data = await response.json();
+    let data = [];
+    try {
+      //const response = await fetch(`http://localhost:3001/api/reservations/${date}`);
+      const response = await fetch(`https://2287-217-129-58-21.ngrok-free.app/api/reservations/${date}`,
+        {
+          method: 'GET',
+          headers: {
+            'ngrok-skip-browser-warning': 'true'
+          }
+        }
+      );
+      data = await response.json();
+    }
+    catch(error) {
+      notify()
+    }
 
     if(data.length > 0) {
       const format = initializeTimes().map(obj => {
@@ -45,12 +60,19 @@ function Main() {
   }
 
   const submitForm = async (form) => {
-    //MAKE A TRY CATCH TO AVOID BREAK CODE WHEN SERVER IS NOT UP
-    const response = await fetch('http://localhost:3001/api/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(form)
-    })
+    try {
+      //await fetch('http://localhost:3001/api/submit')
+      await fetch('https://2287-217-129-58-21.ngrok-free.app/api/submit', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(form)
+            });
+      return true;
+    }
+    catch(error) {
+      notify();
+      return false;
+    }
   }
 
   const reducer = (state, action) => {

@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { schema } from "../schemas";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Reservations({ availableTimes, updateTimes, submitForm }) {
     let navigate = useNavigate();
@@ -14,10 +16,12 @@ function Reservations({ availableTimes, updateTimes, submitForm }) {
             guests: "1",
             occasion: "Birthday"
         },
-        onSubmit: (values, actions) => {
-            submitForm(values);
-            actions.resetForm();
-            navigate("/reservations/confirmed");
+        onSubmit: async (values, actions) => {
+            const success = await submitForm(values);
+            if (success) {
+                actions.resetForm();
+                navigate("/reservations/confirmed");
+            }
         },
         validationSchema: schema
     })
@@ -34,7 +38,7 @@ function Reservations({ availableTimes, updateTimes, submitForm }) {
         <section className="reservations">
             <div className="reservations-container">
                 <h2>Make your reservation here:</h2>
-                <form className="reservations-form" onSubmit={formik.handleSubmit} novalidate>
+                <form className="reservations-form" onSubmit={formik.handleSubmit} noValidate>
                     <label htmlFor="name"><h4>Name: </h4></label>
                     {formik.errors.name && formik.touched.name && <p className="error">{formik.errors.name}</p>}
                     <input
@@ -103,6 +107,7 @@ function Reservations({ availableTimes, updateTimes, submitForm }) {
                         </>
                     }
                     <button className="button" type="submit"><h3>Confirm reservation</h3></button>
+                    <ToastContainer />
                 </form>
             </div>
         </section>
