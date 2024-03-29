@@ -89,6 +89,10 @@ p {
   cursor: pointer
 }
 
+.error {
+  color:#EE9972
+}
+
 /*----------HEADER-----------*/
 
 .header {
