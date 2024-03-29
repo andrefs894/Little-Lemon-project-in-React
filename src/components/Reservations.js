@@ -81,6 +81,7 @@ function Reservations({ availableTimes, updateTimes, submitForm }) {
                                 }
                             </select>
                             <label htmlFor="guests"><h4>Number of guests: </h4></label>
+                            {formik.errors.guests && formik.touched.guests && <p className="error">{formik.errors.guests}</p>}
                             <input
                                 type="number"
                                 min="1"
@@ -89,7 +90,6 @@ function Reservations({ availableTimes, updateTimes, submitForm }) {
                                 value={formik.values.guests}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur} />
-                                {formik.errors.guests && formik.touched.guests && <p>{formik.errors.guests}</p>}
                             <label htmlFor="occasion"><h4>Occasion: </h4></label>
                             <select
                                 id="occasion"

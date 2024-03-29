@@ -31,6 +31,10 @@
   body .highlights-container {
     padding: 10px 5%;
   }
+  body .about-container {
+    padding: 10px 5%;
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 980px) {
@@ -337,11 +341,70 @@ p {
   color:black;
 }
 
+.booking {
+  background-color: #495E57;
+}
+
+.booking-container {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 20%;
+  align-items: center;
+}
+
+.booking-container h2 {
+  color:#F4CE14
+}
+
+.booking-container h4 {
+  color: white
+}
+
 /*----------ABOUT-----------*/
 
 .about {
-  height: 500px;
-  background-color: white;
+  background-color: #495E57;
+}
+
+.about-container {
+  display: flex;
+  padding: 50px 10%;
+  align-items: center;
+}
+.about-container .text {
+  padding: 0 5%;
+  color:white;
+}
+
+.about-container .text h2 {
+  color:#F4CE14
+}
+
+.about-container .text h3 {
+  color:#EE9972;
+  font-weight: lighter;
+  font-style: italic;
+}
+
+.embla {
+  overflow: hidden;
+  padding: 3% 3%;
+}
+
+.embla-container {
+  display: flex;
+}
+
+.embla-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.embla-slide img {
+  max-height: 400px;
+  width: 100%;
+  border-radius: 15px;
+  object-fit: cover;
 }
 
 /*----------FOOTER-----------*/
@@ -349,6 +412,7 @@ p {
 .footer-container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap:5%;
   padding: 50px 10%;
 }

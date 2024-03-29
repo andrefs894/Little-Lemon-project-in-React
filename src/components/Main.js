@@ -9,6 +9,7 @@ import BookingConfirm from './BookingConfirm';
 function Main() {
 
   const updateTimes = async (date) => {
+    //MAKE A TRY CATCH TO AVOID BREAK CODE WHEN SERVER IS NOT UP
     const response = await fetch(`http://localhost:3001/api/reservations/${date}`);
     const data = await response.json();
 
@@ -44,11 +45,10 @@ function Main() {
   }
 
   const submitForm = async (form) => {
+    //MAKE A TRY CATCH TO AVOID BREAK CODE WHEN SERVER IS NOT UP
     const response = await fetch('http://localhost:3001/api/submit', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form)
     })
   }
