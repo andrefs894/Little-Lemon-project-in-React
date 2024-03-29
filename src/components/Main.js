@@ -13,15 +13,7 @@ function Main() {
   const updateTimes = async (date) => {
     let data = [];
     try {
-      //const response = await fetch(`http://localhost:3001/api/reservations/${date}`);
-      const response = await fetch(`https://2287-217-129-58-21.ngrok-free.app/api/reservations/${date}`,
-        {
-          method: 'GET',
-          headers: {
-            'ngrok-skip-browser-warning': 'true'
-          }
-        }
-      );
+      const response = await fetch(`http://localhost:3001/api/reservations/${date}`);
       data = await response.json();
     }
     catch(error) {
@@ -61,8 +53,7 @@ function Main() {
 
   const submitForm = async (form) => {
     try {
-      //await fetch('http://localhost:3001/api/submit')
-      await fetch('https://2287-217-129-58-21.ngrok-free.app/api/submit', {
+      await fetch('http://localhost:3001/api/submit', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify(form)
